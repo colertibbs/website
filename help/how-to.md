@@ -3,7 +3,7 @@
 That's a good question. Instead of tracking the *actual* sketch files (or *binaries*) in git, Kactus transforms your sketch file into groups of individual text files – one for each layer/page – that are much more suited for `git` to work with. 
 
 ## Workflow
-
+**this should be a bit more user friendly for some people who have never worked with git before, i personally struggled and had to speak with a company programmer to actually set this up. maybe a simple video or some more in depth insctructions would be nice, thank you <3**
 The basic workflow looks very similar to how many developers use `git`:
 
 1. Clone your repo locally
