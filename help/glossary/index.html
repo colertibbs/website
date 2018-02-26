@@ -1,0 +1,182 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Introducing true design version control without changing your tools. Manage changes, document work and keep your team in sync.">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="theme-color" content="#3EAD3F">
+<link href="/apple-touch-icon.png" rel="shortcut icon">
+<link href="/style.css" rel="stylesheet" type="text/css">
+<title>Kactus - Help</title>
+<style>
+  #container h1 {
+    text-align: center;
+  }
+  #container br {
+    margin-top: 1em;
+    display: block;
+    content: " ";
+  }
+
+  #container h2 {
+    margin-top: 40px;
+  }
+
+  #container img {
+    width: 100%;
+  }
+
+  .hljs {
+    color: #383a42;
+    background: #fafafa;
+  }
+
+  .hljs-comment,
+  .hljs-quote {
+    color: #a0a1a7;
+    font-style: italic;
+  }
+
+  .hljs-doctag,
+  .hljs-keyword,
+  .hljs-formula {
+    color: #a626a4;
+  }
+
+  .hljs-section,
+  .hljs-name,
+  .hljs-selector-tag,
+  .hljs-deletion,
+  .hljs-subst {
+    color: #e45649;
+  }
+
+  .hljs-literal {
+    color: #0184bb;
+  }
+
+  .hljs-string,
+  .hljs-regexp,
+  .hljs-addition,
+  .hljs-attribute,
+  .hljs-meta-string {
+    color: #50a14f;
+  }
+
+  .hljs-built_in,
+  .hljs-class .hljs-title {
+    color: #c18401;
+  }
+
+  .hljs-attr,
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-type,
+  .hljs-selector-class,
+  .hljs-selector-attr,
+  .hljs-selector-pseudo,
+  .hljs-number {
+    color: #986801;
+  }
+
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-link,
+  .hljs-meta,
+  .hljs-selector-id,
+  .hljs-title {
+    color: #4078f2;
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    font-weight: bold;
+  }
+
+  .hljs-link {
+    text-decoration: underline;
+  }
+</style>
+<header class="container text-center">
+	<a href="/"><img src="https://avatars0.githubusercontent.com/u/22014617?v=3&u=89e1d1c468b5abb12e2c8a1233bb08f3d3222db9&s=96" alt="Kactus" width="96px" height="96px"/></a>
+	<ul class="nav">
+		<li><a href="/">Overview</a></li>
+    <li><a href="/pricing/">Pricing</a></li>
+		<li><a href="/release-notes/">Release Notes</a></li>
+		<li><a href="/help/" class="current">Help</a></li>
+	</ul>
+</header>
+<div class="container hero" id="container">
+  <h1 id="glossary">Glossary</h1>
+<p>Below are a list of some Git and Kactus specific terms we use across our sites and documentation.</p>
+<hr>
+<h2 id="git">Git</h2>
+<p>Git is an open source program for tracking changes in text files. It was written by the author of the Linux operating system, and is the core technology that Kactus and GitHub are built on top of.</p>
+<h2 id="repository-aka-repo">Repository (aka repo)</h2>
+<p>A repository is the most basic element of Kactus. They're easiest to imagine as a project's folder. A repository contains all of the project files, and stores each file's revision history. Repositories can have multiple collaborators and can be either public or private.</p>
+<h2 id="commit">Commit</h2>
+<p>A commit is an individual change to a file (or set of files). It's like when you save a file, except with Git, every time you save it creates a unique ID (a.k.a. the &quot;SHA&quot; or &quot;hash&quot;) that allows you to keep record of what changes were made when and by who. Commits usually contain a commit message which is a brief description of what changes were made.</p>
+<h2 id="branch">Branch</h2>
+<p>A branch is a parallel version of a repository. It is contained within the repository, but does not affect the primary (usually called <code>master</code>) branch allowing you to work freely without disrupting the &quot;live&quot; version. When you've made the changes you want to make, you can merge your branch back into the <code>master</code> branch to publish your changes.</p>
+<hr>
+<h2 id="blame">Blame</h2>
+<p>The &quot;blame&quot; feature in Git describes the last modification to each line of a file, which generally displays the revision, author and time. This is helpful, for example, in tracking down when a feature was added, or which commit led to a particular bug.</p>
+<h2 id="clone">Clone</h2>
+<p>A clone is a copy of a repository that lives on your computer instead of on a website's server somewhere, or the act of making that copy. With your clone you can edit the files and use Git to keep track of your changes without having to be online. It is, however, connected to the remote version so that changes can be synced between the two. You can push your local changes to the remote to keep them synced when you're online.</p>
+<h2 id="diff">Diff</h2>
+<p>A diff is the <em>difference</em> in changes between two commits, or saved changes. The diff will visually describe what was added or removed from a file since its last commit.</p>
+<h2 id="fetch">Fetch</h2>
+<p>Fetching refers to getting the latest changes from an online repository without merging them in. Once these changes are fetched you can compare them to your local branches (the files residing on your local machine).</p>
+<h2 id="ignore">Ignore</h2>
+<p>Git will look for a special file in the root of your repo called <code>.gitignore</code> and ignore any files in the repo that match any of the patterns defined therein. You can read more about git ignore <a href="https://git-scm.com/docs/gitignore">here</a>.</p>
+<p>Finder hides files with names starting in a <code>.</code>, but you can easily edit this file within Kactus (&quot;Repository&quot; &gt; &quot;Repository Settings&quot; &gt; &quot;Ignored Files&quot;).</p>
+<figure style="text-align: center;">
+  <img style="width: auto;" src="https://user-images.githubusercontent.com/297461/30068977-6853030c-922d-11e7-94d0-01ef77276851.png" alt="Ignored Files">
+  <figcaption>Managing ignored files in Kactus</figcaption>
+</figure>
+<h2 id="issue">Issue</h2>
+<p>Issues are suggested improvements, tasks or questions related to the repository. Issues can be created by anyone (for public repositories), and are moderated by repository collaborators. Each issue contains its own discussion forum, can be labeled and assigned to a user.</p>
+<h2 id="markdown">Markdown</h2>
+<p>Markdown is a simple semantic file format, not too dissimilar from .doc, .rtf and .txt. Markdown makes it easy for even those without a web-publishing background to write prose (including with links, lists, bullets, etc.) and have it displayed like a website. GitHub supports Markdown, and you can <a href="https://help.github.com/categories/writing-on-github/">learn about the semantics</a>.</p>
+<h2 id="merge">Merge</h2>
+<p>Merging takes the changes from one branch (in the same repository or from a fork), and applies them into another. This often happens as a pull request (which can be thought of as a request to merge). For more information, see &quot;<a href="https://help.github.com/articles/merging-a-pull-request">Merging a pull request</a>.&quot;</p>
+<h2 id="open-source">Open source</h2>
+<p>Open source software is software that can be <a href="http://opensource.org/definition">freely used, modified, and shared (in both modified and unmodified form) by anyone</a>. Today the concept of &quot;open source&quot; is often extended beyond software, to represent a philosophy of collaboration in which working materials are made available online for anyone to fork, modify, discuss, and contribute to.</p>
+<p>For more information on open source, specifically how to create and grow an open source project, we've created <a href="https://opensource.guide/">Open Source Guides</a> that will help you foster a healthy open source community.</p>
+<h2 id="private-repository">Private repository</h2>
+<p>Private repositories are repositories that can only be viewed or contributed to by their creator and collaborators the creator specified.</p>
+<h2 id="pull">Pull</h2>
+<p>Pull refers to when you are <em>fetching in</em> changes and <em>merging</em> them. For instance, if someone has edited the remote file you're both working on, you'll want to <em>pull</em> in those changes to your local copy so that it's up to date.</p>
+<h2 id="pull-request">Pull request</h2>
+<p>Pull requests are proposed changes to a repository submitted by a user and accepted or rejected by a repository's collaborators. Like issues, pull requests each have their own discussion forum. For more information, see &quot;<a href="https://help.github.com/articles/about-pull-requests">About pull requests</a>&quot;.</p>
+<h2 id="push">Push</h2>
+<p>Pushing refers to sending your committed changes to a remote repository, such as a repository hosted on GitHub. For instance, if you change something locally, you'd want to then <em>push</em> those changes so that others may access them.</p>
+<h2 id="remote">Remote</h2>
+<p>This is the version of something that is hosted on a server, most likely GitHub. It can be connected to local clones so that changes can be synced.</p>
+<h2 id="upstream">Upstream</h2>
+<p>When talking about a branch or a fork, the primary branch on the original repository is often referred to as the &quot;upstream&quot;, since that is the main place that other changes will come in from. The branch/fork you are working on is then called the &quot;downstream&quot;.</p>
+
+  <hr />
+  <div style="text-align: center; color: #24292e; margin-bottom: 20px;">
+    Noticed a typo? Though of any way to improved those docs? Please help us <a href="https://github.com/kactus-io/website/edit/master/help/glossary.md" style="color: #24292e" target="_blank">here</a> <svg height="20" class="fill-gray" aria-label="love" viewBox="0 0 12 16" version="1.1" width="15" role="img" style="position: relative; top: 5px;"><path fill-rule="evenodd" d="M11.2 3c-.52-.63-1.25-.95-2.2-1-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-.95.05-1.69.38-2.2 1-.52.61-.78 1.28-.8 2 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.02-.72-.28-1.39-.8-2.02V3z"></path></svg>
+  </div>
+</div>
+<footer class="container">
+  <svg height="20" class="fill-gray" aria-label="code" viewBox="0 0 14 16" width="17" role="img">
+    <path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path>
+  </svg>
+  with
+  <svg height="20" class="fill-gray" aria-label="love" viewBox="0 0 12 16" version="1.1" width="15" role="img">
+    <path fill-rule="evenodd" d="M11.2 3c-.52-.63-1.25-.95-2.2-1-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-.95.05-1.69.38-2.2 1-.52.61-.78 1.28-.8 2 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.02-.72-.28-1.39-.8-2.02V3z"></path>
+  </svg>
+  by <a href="https://github.com/mathieudutour">Mathieu</a> and <a href="https://github.com/kactus-io/kactus/graphs/contributors">friends</a>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101929166-1', 'auto');
+  ga('send', 'pageview');
+</script>

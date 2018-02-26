@@ -1,0 +1,183 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Introducing true design version control without changing your tools. Manage changes, document work and keep your team in sync.">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="theme-color" content="#3EAD3F">
+<link href="/apple-touch-icon.png" rel="shortcut icon">
+<link href="/style.css" rel="stylesheet" type="text/css">
+<title>Kactus - Help</title>
+<style>
+  #container h1 {
+    text-align: center;
+  }
+  #container br {
+    margin-top: 1em;
+    display: block;
+    content: " ";
+  }
+
+  #container h2 {
+    margin-top: 40px;
+  }
+
+  #container img {
+    width: 100%;
+  }
+
+  .hljs {
+    color: #383a42;
+    background: #fafafa;
+  }
+
+  .hljs-comment,
+  .hljs-quote {
+    color: #a0a1a7;
+    font-style: italic;
+  }
+
+  .hljs-doctag,
+  .hljs-keyword,
+  .hljs-formula {
+    color: #a626a4;
+  }
+
+  .hljs-section,
+  .hljs-name,
+  .hljs-selector-tag,
+  .hljs-deletion,
+  .hljs-subst {
+    color: #e45649;
+  }
+
+  .hljs-literal {
+    color: #0184bb;
+  }
+
+  .hljs-string,
+  .hljs-regexp,
+  .hljs-addition,
+  .hljs-attribute,
+  .hljs-meta-string {
+    color: #50a14f;
+  }
+
+  .hljs-built_in,
+  .hljs-class .hljs-title {
+    color: #c18401;
+  }
+
+  .hljs-attr,
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-type,
+  .hljs-selector-class,
+  .hljs-selector-attr,
+  .hljs-selector-pseudo,
+  .hljs-number {
+    color: #986801;
+  }
+
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-link,
+  .hljs-meta,
+  .hljs-selector-id,
+  .hljs-title {
+    color: #4078f2;
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    font-weight: bold;
+  }
+
+  .hljs-link {
+    text-decoration: underline;
+  }
+</style>
+<header class="container text-center">
+	<a href="/"><img src="https://avatars0.githubusercontent.com/u/22014617?v=3&u=89e1d1c468b5abb12e2c8a1233bb08f3d3222db9&s=96" alt="Kactus" width="96px" height="96px"/></a>
+	<ul class="nav">
+		<li><a href="/">Overview</a></li>
+    <li><a href="/pricing/">Pricing</a></li>
+		<li><a href="/release-notes/">Release Notes</a></li>
+		<li><a href="/help/" class="current">Help</a></li>
+	</ul>
+</header>
+<div class="container hero" id="container">
+  <h1 id="how-does-it-work">How does it work?</h1>
+<p>That's a good question. Instead of tracking the <em>actual</em> sketch files (or <em>binaries</em>) in git, Kactus transforms your sketch file into groups of individual text files – one for each layer/page – that are much more suited for <code>git</code> to work with.</p>
+<h2 id="workflow">Workflow</h2>
+<p>The basic workflow looks very similar to how many developers use <code>git</code>:</p>
+<ol>
+<li>Clone your repo locally</li>
+<li>Make your changes in Sketch</li>
+<li>Commit your changes</li>
+<li>Push your changes</li>
+</ol>
+<p>However, when working with multiple designers, the <a href="https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow">git-flow</a> methodology works very well:</p>
+<ol>
+<li>Clone your repo (if you're just getting started)</li>
+<li>Checkout a feature branch (e.g. <code>feat/background-color</code>)</li>
+<li>Make your changes in Sketch</li>
+<li>Commit your changes</li>
+<li>Either:
+<ul>
+<li>Push your changes to your git server for others to review/merge</li>
+<li>Merge your changes into another branch (master) yourself</li>
+</ul>
+</li>
+</ol>
+<h2 id="committing-changes">Committing Changes</h2>
+<p>When Kactus is running (with your repository open), it watches your sketch files and re-parses them when a change is detected. This parsed (or exploded) view of your sketch file is what git tracks.</p>
+<p><img src="https://user-images.githubusercontent.com/3254314/28254880-df5a388e-6a65-11e7-8b73-8de6fe227927.gif" alt="commit"></p>
+<hr>
+<h2 id="merging-two-parallel-branches">Merging two parallel branches</h2>
+<ol>
+<li>Checkout the branch you want to merge <em>into</em></li>
+<li>Select &quot;Merge into Current Branch&quot; from the &quot;Branch&quot; menu</li>
+<li>Select the branch that you want to merge <em>from</em></li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/3254314/28254882-e28fb8d0-6a65-11e7-86a5-d766d4303959.gif" alt="merge"></p>
+<hr>
+<h2 id="sharing-text-styles-across-multiple-sketch-files">Sharing text styles across multiple sketch files</h2>
+<p><img src="https://user-images.githubusercontent.com/3254314/28254883-e5f79a92-6a65-11e7-86cc-3cfdc687a454.gif" alt="sharetextstyle"></p>
+<hr>
+<h2 id="existing-repos">Existing Repos</h2>
+<p>If your sketch files are already tracked in a git repository, there are few things you need to do to get the most out of Kactus.</p>
+<ol>
+<li>Open your repo in Kactus to generate the JSON representation of your sketch files</li>
+<li>Commit the generated JSON directories</li>
+<li>Untrack sketch files. In most cases, this can be done with git by running: <code>git rm --cached *.sketch</code></li>
+<li>Tell git to <a href="/help/glossary/#ignore">ignore</a> sketch files by adding <code>*.sketch</code> to your repo's <code>.gitignore</code> file (create it if it doesn't exist)</li>
+</ol>
+<blockquote>
+<p><em>Note:</em> When you create a new repository with Kactus, it is automatically configured to <a href="/help/glossary/#ignore">ignore</a> sketch files.</p>
+</blockquote>
+
+  <hr />
+  <div style="text-align: center; color: #24292e; margin-bottom: 20px;">
+    Noticed a typo? Though of any way to improved those docs? Please help us <a href="https://github.com/kactus-io/website/edit/master/help/how-to.md" style="color: #24292e" target="_blank">here</a> <svg height="20" class="fill-gray" aria-label="love" viewBox="0 0 12 16" version="1.1" width="15" role="img" style="position: relative; top: 5px;"><path fill-rule="evenodd" d="M11.2 3c-.52-.63-1.25-.95-2.2-1-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-.95.05-1.69.38-2.2 1-.52.61-.78 1.28-.8 2 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.02-.72-.28-1.39-.8-2.02V3z"></path></svg>
+  </div>
+</div>
+<footer class="container">
+  <svg height="20" class="fill-gray" aria-label="code" viewBox="0 0 14 16" width="17" role="img">
+    <path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path>
+  </svg>
+  with
+  <svg height="20" class="fill-gray" aria-label="love" viewBox="0 0 12 16" version="1.1" width="15" role="img">
+    <path fill-rule="evenodd" d="M11.2 3c-.52-.63-1.25-.95-2.2-1-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-.95.05-1.69.38-2.2 1-.52.61-.78 1.28-.8 2 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.02-.72-.28-1.39-.8-2.02V3z"></path>
+  </svg>
+  by <a href="https://github.com/mathieudutour">Mathieu</a> and <a href="https://github.com/kactus-io/kactus/graphs/contributors">friends</a>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101929166-1', 'auto');
+  ga('send', 'pageview');
+</script>
